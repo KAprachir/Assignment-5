@@ -8,7 +8,7 @@ const signBtn = document
     const passwordvalue = passwordInput.value;
     if (userValue === "admin" && passwordvalue === "admin123") {
       alert("Sign In Successfull");
-      window.location.href = "/home.html";
+      window.location.href = "./home.html";
     } else {
       alert("Invalid username or password");
       return;
