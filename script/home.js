@@ -76,7 +76,7 @@ const displayIssues = (issues) => {
         <div class="badge badge-soft ${issue.priority === "high" ? "badge-error" : issue.priority === "medium" ? "badge-warning" : "badge-primary"} ">${issue.priority}</div>
       </div>
       <div class="mb-5">
-        <h3 onclick = 'fetchissueDetails(${issue.id})' class="text-lg font-semibold">${issue.title}</h3>
+        <h3 class="text-lg font-semibold">${issue.title}</h3>
         <p class="text-[#64748B] text-sm my-3 line-clamp-2">${issue.description}</p>
         <div class="labels-container">
           ${issue.labels
@@ -99,6 +99,10 @@ const displayIssues = (issues) => {
         <p class="text-[#64748B] text-sm">${new Date(issue.createdAt).toLocaleDateString()}</p>
 
       </div>`;
+
+    issueCard.addEventListener("click", () => {
+      fetchissueDetails(issue.id);
+    });
     allIssuesContainer.append(issueCard);
   });
 };
